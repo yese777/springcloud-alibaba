@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      # Nacos 配置中心,配置是通过拼接${prefix}-${spring.profiles.active}.${file-extension}来获取的
+      config:
+        # 配置中心地址
+        server-addr: 127.0.0.1:8848
+        namespace: test
+        group: DEFAULT_GROUP
+        username: nacos
+        password: nacos
+        prefix: alibaba-provider
+        # 配置文件格式
+        file-extension: yml
+        # 加载共享配置文件,可以为多个
+        shared-configs:
+          - common.yml
+          - seata-client.yml
+          - db1.yml
+        # 指定共享配置文件支持动态刷新
+        refreshable-dataids: common.yml,seata-client.yml,db1.yml
+

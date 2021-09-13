@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: test
+        group: DEFAULT_GROUP
+        username: nacos
+        password: nacos
+        prefix: alibaba-gateway
+        file-extension: yml
+        shared-configs:
+          - common.yml
+        refreshable-dataids: common.yml

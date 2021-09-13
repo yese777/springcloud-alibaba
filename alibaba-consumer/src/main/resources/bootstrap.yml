@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: test
+        group: DEFAULT_GROUP
+        username: nacos
+        password: nacos
+        prefix: alibaba-consumer
+        file-extension: yml
+        shared-configs:
+          - common.yml
+          - seata-client.yml
+          - db1.yml
+        refreshable-dataids: common.yml,seata-client.yml,db1.yml
